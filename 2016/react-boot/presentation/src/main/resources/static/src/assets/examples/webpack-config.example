@@ -1,0 +1,33 @@
+const path = require('path');
+const ROOT = path.resolve(__dirname, 'src/main/resources/static');
+const SRC = path.resolve(ROOT, 'src');
+const DEST = path.resolve(ROOT, 'output');
+const CSS = path.resolve(SRC, 'assets');
+const webpack = require('webpack');
+
+module.exports = {
+  entry: SRC,
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
+  output: {
+    path: DEST,
+    filename: 'bundle.js',
+    publicPath: '/output/'
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        loaders: ['babel'],
+        exclude: /(node_modules)/,
+        include: SRC
+      },
+      {
+        test: /\.css$/,
+        include: CSS,
+        loaders: ["style", "css"]
+      }
+    ]
+  }
+};

@@ -1,0 +1,21 @@
+import React, { Component } from "react";
+import Email from "./components/presentation/Email";
+
+class User extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      firstName: "Dave",
+      lastName: "Townsend",
+      email: "dt@gmail.com"
+    }
+  }
+
+  render() {
+    return (
+      <Email email={this.state.email}/>
+    )
+  }
+};
+export default User;

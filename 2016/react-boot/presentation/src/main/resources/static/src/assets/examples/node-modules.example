@@ -1,0 +1,5 @@
+// es6 modules
+import React from "react";
+
+// common js modules
+var React = require('react');

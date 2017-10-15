@@ -1,0 +1,19 @@
+npm install -g create-react-app
+
+create-react-app MyApp
+
+MyApp/
+  README.md
+  index.html
+  favicon.ico
+  node_modules/
+  package.json
+  .gitignore
+  src/
+    App.css
+    App.js
+    index.css
+    index.js
+    logo.svg
+
+  npm start

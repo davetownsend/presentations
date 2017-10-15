@@ -1,0 +1,12 @@
+ReactDOM.render(
+  <div>
+    <Router history={browserHistory}>
+      <Route path="/" component={App}>
+        <IndexRoute component={Home}/>
+        <Route path="tracking" component={Tracking}/>
+        <Route path="booking" component={Booking}/>
+      </Route>
+    </Router>
+  </div>,
+  document.getElementById('container')
+);

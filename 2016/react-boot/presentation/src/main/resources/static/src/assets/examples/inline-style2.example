@@ -1,0 +1,13 @@
+<div style={{fontSize: '15pt', color: '#f2f2f2'}} />
+
+
+<div style={[styles.body, styles.content]} />
+
+const styles = {
+  body: {
+    backgroundColor: '#CCCCCC'
+  },
+  content: {
+    fontFamily: 'Helvetica Neue',
+  }
+};

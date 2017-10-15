@@ -1,0 +1,58 @@
+buildscript {
+  repositories {
+    mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+    maven { url "https://plugins.gradle.org/m2/" }
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
+    classpath("io.spring.gradle:dependency-management-plugin:0.5.3.RELEASE")
+    classpath("com.moowork.gradle:gradle-node-plugin:0.11")
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+apply plugin: 'groovy'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: "com.moowork.node"
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+  mavenCentral()
+  maven { url "https://repo.spring.io/snapshot" }
+  maven { url "https://repo.spring.io/milestone" }
+}
+
+
+dependencies {
+  compile("org.springframework.boot:spring-boot-starter-web")
+  compile("org.springframework.boot:spring-boot-starter-actuator")
+  compile("org.codehaus.groovy:groovy:2.4.4")
+  compile("org.projectlombok:lombok")
+
+  testCompile("org.spockframework:spock-spring")
+  testCompile("org.spockframework:spock-core:1.0-groovy-2.4")
+  testCompile("org.springframework.boot:spring-boot-starter-test")
+}
+
+
+jar {
+  baseName = 'booking-service'
+}
+
+
+task(type: Wrapper) {
+  gradleVersion = '2.9'
+}
+
+
+npm_run {
+  args = ['webpack']
+}
+
+processResources.dependsOn('npm_install', 'npm_run')

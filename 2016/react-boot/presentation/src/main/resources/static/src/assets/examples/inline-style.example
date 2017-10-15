@@ -1,0 +1,15 @@
+<div style={styles.footer}>Matson, Inc &copy; 2016</div>
+
+
+const styles = {
+  footer: {
+    backgroundColor: '#CCCCCC',
+    color: '#0000',
+    width: '100%',
+    height: '35px',
+    paddingLeft: '20px',
+    paddingTop: '12px',
+    fontFamily: 'Helvetica Neue',
+    fontSize: '10pt'
+  }
+};

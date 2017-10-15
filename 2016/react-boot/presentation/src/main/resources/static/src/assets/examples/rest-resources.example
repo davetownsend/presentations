@@ -1,0 +1,26 @@
+GET /api/booking
+[
+  {
+    "id": 2158,
+     "bookingNumber": "1264829",
+     "status": "ACTIVE",
+     "port": "AK"
+  },
+  {
+    "id": 1465,
+    "bookingNumber": "1288857",
+    "status": "ACTIVE",
+    "port": "HON"
+  },
+  ...
+]
+
+GET /api/booking/{bookingNumber}
+[
+  {
+    "id": 2158,
+     "bookingNumber": "1264829",
+     "status": "ACTIVE",
+     "port": "AK"
+  }
+]

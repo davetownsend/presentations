@@ -1,0 +1,5 @@
+npm install --save-dev react react-router (etc...)
+
+or
+
+npm i -D react react-router (etc...)

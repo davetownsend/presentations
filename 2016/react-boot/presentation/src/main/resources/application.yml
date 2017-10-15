@@ -1,0 +1,9 @@
+info:
+  version: 0.0.1
+
+spring:
+  application:
+    name: react-boot-pres
+
+server:
+  port: 4040

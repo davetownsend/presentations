@@ -1,0 +1,11 @@
+import AppBar from 'material-ui/AppBar';
+import DatePicker from 'material-ui/.../date-picker';
+
+<AppBar
+  title="React+Boot"
+  style={{textAlign: "left"}}
+/>
+
+<DatePicker
+  hintText="select date"
+/>

@@ -1,0 +1,9 @@
+info:
+  version: 0.0.1
+
+spring:
+  application:
+    name:  booking-service
+
+server:
+  port: 6060
