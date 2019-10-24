@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: CloudFormation template for creating private S3 user bucket
+Parameters:
+  UserName:
+    Description: Enter IAM user name
+    Type: String
+Resources:
+  MyBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+  MyBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref MyBucket
+      PolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal:
+              AWS: !Sub "arn:aws:iam::${AWS::AccountId}:user/${UserName}"
+            Action:
+              - s3:*
+            Resource: !Sub "arn:aws:s3:::${MyBucket}/*"
+Outputs:
+  BucketARN:
+    Description: The bucket ARN
+    Value: !GetAtt MyBucket.Arn
